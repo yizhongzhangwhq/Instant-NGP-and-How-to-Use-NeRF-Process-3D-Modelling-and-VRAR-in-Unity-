@@ -1,0 +1,17 @@
+# set environment in Anaconda #
+(base) C:\Users\VR_Studio_Yz>conda activate ngp
+
+# enter the file #
+(ngp) C:\Users\VR_Studio_Yz>cd c:
+(ngp) C:\Users\VR_Studio_Yz>cd C:\Users\VR_Studio_Yz\Desktop\github
+
+# Pull images from movie #
+(ngp) C:\Users\VR_Studio_Yz\Desktop\github> python scripts\colmap2nerf.py --video_in mountain\m6yy5.MOV --video_fps 2 --run_colmap --aabb_scale 16 --overwrite
+
+# camera match given set of images -run in data directory #
+cd mountain
+python C:\Users\VR_Studio_Yz\Desktop\github\scripts\colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16 --overwrite
+
+# run interactive instant-ngp #
+cd ..
+instant-ngp mountain
